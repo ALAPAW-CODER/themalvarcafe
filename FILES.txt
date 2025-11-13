@@ -1,0 +1,55 @@
+# The Malvar Bat Cave Cafe - File Structure
+
+## 📁 Essential PHP Files Only
+
+### Core Files:
+1. **index.php** - Entry point (redirects to login)
+2. **login.php** - User & Admin authentication
+3. **coffee-landing.php** - Main landing/home page
+4. **special-menu.php** - Menu page with categories
+5. **booking.php** - Reservation/booking system
+6. **admin-dashboard.php** - Admin control panel
+7. **update-cart.php** - Cart update handler
+
+### Assets:
+- **coffee-landing.css** - Main stylesheet (responsive)
+- **common.js** - JavaScript functions
+- **config.php** - Configuration settings
+- **.htaccess** - URL rewriting
+
+### Image Folders:
+- frappe/
+- icedcoffee/
+- meals/
+- pastry/
+- snacks/
+
+---
+
+## ✅ What You Have:
+
+### User Side:
+- Login page (user/admin)
+- Landing page with cart & profile dropdown
+- Menu page (categorized)
+- Booking page with payment
+- Logout functionality
+
+### Admin Side:
+- Admin dashboard
+- View/manage bookings
+- Confirm/cancel reservations
+
+### Features:
+- ✅ Shopping cart (session-based)
+- ✅ Profile dropdown with logout
+- ✅ Fully responsive
+- ✅ GCash payment integration
+- ✅ Reservation system
+- ✅ No database (session storage only)
+
+---
+
+## 🚀 Ready to Use with XAMPP
+
+Just copy all files to `htdocs/malvar-cafe/` and start Apache!
