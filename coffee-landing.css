@@ -120,6 +120,7 @@ body.dark-mode .empty-cart {
 
 body.dark-mode .cart-btn,
 body.dark-mode .profile-btn,
+body.dark-mode .search-btn,
 body.dark-mode .dark-mode-btn {
     color:#f4dcc4;
 }
@@ -677,7 +678,7 @@ header {
     align-items: center;
     background: white;
     border-radius: 25px;
-    padding: 2px 15px;
+    padding: 6px 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

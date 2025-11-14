@@ -389,13 +389,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <ul class="nav-links">
                 <li><a href="coffee-landing.php" class="active">Home</a></li>
-                <li><a href="booking.php">Booking</a></li>
                 <li><a href="special-menu.php">Menu</a></li>
+                <li><a href="booking.php">Booking</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="Search menu items..." onkeyup="searchMenu()">
-                    <button class="search-btn"><img src="images/search.png" alt="Search"></button>
+                    <button id="search-Input" class="search-btn"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
                 </div>
 
                 <!-- Cart Dropdown -->
