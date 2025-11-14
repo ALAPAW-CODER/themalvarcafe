@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Malvar Bat Cave Cafe</title>
+    <script src="https://kit.fontawesome.com/8196c78746.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="./images/logoo.png">
     <link rel="stylesheet" href="coffee-landing.css?v=<?php echo time(); ?>">
     <script>
@@ -400,7 +401,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <!-- Cart Dropdown -->
                 <div class="cart-dropdown">
                     <button class="cart-btn" onclick="toggleCart()">
-                        <img src="images/shoppingcart.png" alt="Cart">
+                        <i class="fa-solid fa-cart-shopping fa-2xl"></i>
                         <?php if (count($_SESSION['cart']) > 0): ?>
                             <span class="cart-count"><?php echo count($_SESSION['cart']); ?></span>
                         <?php endif; ?>
@@ -449,7 +450,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Profile Dropdown -->
                 <div class="profile-dropdown">
-                    <button class="profile-btn" onclick="toggleProfile()"><img src="images/user.png" alt="Profile"></button>
+                    <button class="profile-btn" onclick="toggleProfile()"><i class="fa-solid fa-user fa-2xl"></i></button>
                     <div class="dropdown-menu" id="profileMenu">
                         <div class="dropdown-header">
                             <strong><?php echo isset($_SESSION['adminUsername']) ? 'Admin' : 'User'; ?></strong>
@@ -467,7 +468,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Dark Mode Toggle -->
                 <button type="button" class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode(); return false;" title="Switch to Dark Mode">
-                    <img id="darkModeIcon" src="images/darkmode.png" alt="Dark Mode" style="width: 24px; height: 24px; object-fit: contain;">
+                    <i id="darkModeIcon" class="fa-solid fa-moon fa-2xl"></i>
                 </button>
             </div>
         </nav>
@@ -490,7 +491,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>The premier late-night study, social, and coffee spot near the Batangas State University Malvar Campus. Your perfect place for studying, socializing, and enjoying premium coffee.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="window.location.href='booking.php'">Book Now 📅</button>
-                    <button class="btn-secondary" onclick="window.location.href='special-menu.php'">View Menu</button>
+                    <a href="#bestseller" class="btn-bestseller">Explore Best Sellers ⬇️</a>
                 </div>
             </div>
 
@@ -506,7 +507,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <!-- Popular Now Section -->
-    <section class="popular">
+    <section class="popular" id="bestseller">
         <h2>Popular Now</h2>
         <div class="coffee-beans-bottom">
             <span class="bean">☕</span>
@@ -516,68 +517,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="products-grid">
             <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/iced salted spanish latte.jpg" alt="Iced Salted Spanish Latte">
-                    <span class="rating">4.8 ⭐</span>
+            <a href="#" class="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white/90 shadow ring-1 ring-[#D7A86E]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:ring-[#C9964C]/30" style="text-decoration: none; color: inherit;">
+                <div class="relative overflow-hidden">
+                    <img src="images/iced salted spanish latte.jpg" alt="Iced Salted Spanish Latte" class="aspect-4/5 w-full mt-9 object-cover transition duration-500 group-hover:scale-105" style="height: 350px; object-fit: cover;">
                 </div>
-                <div class="product-info">
-                    <h3>Iced Salted Spanish Latte</h3>
-                    <p class="price">150 ₱</p>
-                    <div class="product-tags">
-                        <span class="tag-cold">Iced</span>
+                <div class="flex flex-1 flex-col p-6" style="display: flex; flex-direction: column; flex: 1; padding: 1.5rem;">
+                    <h3 class="text-lg font-semibold text-[#2B1A12]" style="font-size: 1.125rem; font-weight: 600; color: #2B1A12;">Iced Salted Spanish Latte</h3>
+                    <p class="mt-1 text-sm text-[#6F4E37]" style="margin-top: 0.25rem; font-size: 0.875rem; color: #6F4E37; line-height: 1.5;">Rich espresso with smooth cold milk and a hint of salt</p>
+                    <div class="mt-6 flex items-center gap-2 text-xs font-medium uppercase text-[#A37A58]" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; color: #A37A58;">
+                        <span class="flex items-center gap-1 text-[#C9964C]" style="display: flex; align-items: center; gap: 0.25rem; color: #C9964C;">★ 4.8</span>
+                        <span>Iced Refreshment</span>
                     </div>
-                    <form method="POST" style="display: inline;">
+                    <form method="POST" style="margin-top: 1.5rem;">
                         <input type="hidden" name="product_name" value="Iced Salted Spanish Latte">
                         <input type="hidden" name="product_price" value="150">
                         <input type="hidden" name="product_image" value="images/iced salted spanish latte.jpg">
-                        <button type="submit" name="add_to_cart" class="add-to-cart">🛒</button>
+                        <button type="submit" name="add_to_cart" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#2B1A12] px-5 py-2 text-sm font-medium text-[#FAF3E0] transition hover:bg-[#1F120B] w-full" style="margin-top: 1.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 9999px; background-color: #2B1A12; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #FAF3E0; border: none; cursor: pointer; transition: background 0.3s; width: 100%;">
+                            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                        </button>
                     </form>
                 </div>
-            </div>
+            </a>
 
             <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/vanilla latte.png" alt="Vanilla Latte">
-                    <span class="rating">4.8 ⭐</span>
+            <a href="#" class="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white/90 shadow ring-1 ring-[#D7A86E]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:ring-[#C9964C]/30" style="text-decoration: none; color: inherit;">
+                <div class="relative overflow-hidden">
+                    <img src="images/vanilla latte.png" alt="Vanilla Latte" class="aspect-4/5 w-full mt-9 object-cover transition duration-500 group-hover:scale-105" style="height: 350px; object-fit: cover;">
                 </div>
-                <div class="product-info">
-                    <h3>Vanilla Latte</h3>
-                    <p class="price">120 ₱</p>
-                    <div class="product-tags">
-                        <span class="tag-hot">Hot</span>
-                        <span class="tag-cold">Iced</span>
+                <div class="flex flex-1 flex-col p-6" style="display: flex; flex-direction: column; flex: 1; padding: 1.5rem;">
+                    <h3 class="text-lg font-semibold text-[#2B1A12]" style="font-size: 1.125rem; font-weight: 600; color: #2B1A12;">Vanilla Latte</h3>
+                    <p class="mt-1 text-sm text-[#6F4E37]" style="margin-top: 0.25rem; font-size: 0.875rem; color: #6F4E37; line-height: 1.5;">Smooth latte with delicate vanilla flavor and creamy texture</p>
+                    <div class="mt-6 flex items-center gap-2 text-xs font-medium uppercase text-[#A37A58]" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; color: #A37A58;">
+                        <span class="flex items-center gap-1 text-[#C9964C]" style="display: flex; align-items: center; gap: 0.25rem; color: #C9964C;">★ 4.8</span>
+                        <span>Classic Favorite</span>
                     </div>
-                    <form method="POST" style="display: inline;">
+                    <form method="POST" style="margin-top: 1.5rem;">
                         <input type="hidden" name="product_name" value="Vanilla Latte">
                         <input type="hidden" name="product_price" value="120">
                         <input type="hidden" name="product_image" value="images/vanilla latte.jpg">
-                        <button type="submit" name="add_to_cart" class="add-to-cart">🛒</button>
+                        <button type="submit" name="add_to_cart" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#2B1A12] px-5 py-2 text-sm font-medium text-[#FAF3E0] transition hover:bg-[#1F120B] w-full" style="margin-top: 1.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 9999px; background-color: #2B1A12; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #FAF3E0; border: none; cursor: pointer; transition: background 0.3s; width: 100%;">
+                            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                        </button>
                     </form>
                 </div>
-            </div>
+            </a>
 
             <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="images/iced caramel latte.jpg" alt="Iced Caramel Latte">
-                    <span class="rating">4.8 ⭐</span>
+            <a href="#" class="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white/90 shadow ring-1 ring-[#D7A86E]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:ring-[#C9964C]/30" style="text-decoration: none; color: inherit;">
+                <div class="relative overflow-hidden">
+                    <img src="images/iced caramel latte.jpg" alt="Iced Caramel Latte" class="aspect-4/5 w-full mt-9 object-cover transition duration-500 group-hover:scale-105" style="height: 350px; object-fit: cover;">
                 </div>
-                <div class="product-info">
-                    <h3>Iced Caramel Latte</h3>
-                    <p class="price">130 ₱</p>
-                    <div class="product-tags">
-                        <span class="tag-cold">Iced</span>
+                <div class="flex flex-1 flex-col p-6" style="display: flex; flex-direction: column; flex: 1; padding: 1.5rem;">
+                    <h3 class="text-lg font-semibold text-[#2B1A12]" style="font-size: 1.125rem; font-weight: 600; color: #2B1A12;">Iced Caramel Latte</h3>
+                    <p class="mt-1 text-sm text-[#6F4E37]" style="margin-top: 0.25rem; font-size: 0.875rem; color: #6F4E37; line-height: 1.5;">Cool and sweet caramel latte perfect for hot days</p>
+                    <div class="mt-6 flex items-center gap-2 text-xs font-medium uppercase text-[#A37A58]" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; color: #A37A58;">
+                        <span class="flex items-center gap-1 text-[#C9964C]" style="display: flex; align-items: center; gap: 0.25rem; color: #C9964C;">★ 4.8</span>
+                        <span>Sweet Caramel</span>
                     </div>
-                    <form method="POST" style="display: inline;">
+                    <form method="POST" style="margin-top: 1.5rem;">
                         <input type="hidden" name="product_name" value="Iced Caramel Latte">
                         <input type="hidden" name="product_price" value="130">
                         <input type="hidden" name="product_image" value="images/iced caramel latte.jpg">
-                        <button type="submit" name="add_to_cart" class="add-to-cart">🛒</button>
+                        <button type="submit" name="add_to_cart" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#2B1A12] px-5 py-2 text-sm font-medium text-[#FAF3E0] transition hover:bg-[#1F120B] w-full" style="margin-top: 1.5rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 9999px; background-color: #2B1A12; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: #FAF3E0; border: none; cursor: pointer; transition: background 0.3s; width: 100%;">
+                            Add to Cart <i class="fa-solid fa-cart-plus"></i>
+                        </button>
                     </form>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 

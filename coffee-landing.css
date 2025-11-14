@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f4dcc4 0%, #e8c9a8 50%, #d4b896 100%);
@@ -30,11 +34,11 @@ body.dark-mode .nav-links a {
 }
 
 body.dark-mode .nav-links a:hover {
-    color: #f4dcc4;
+    color: #882700;
 }
 
 body.dark-mode .nav-links a.active {
-    color: #f89a76;
+    color: #f4dcc4;
     font-weight: 700;
 }
 
@@ -112,6 +116,12 @@ body.dark-mode .qty-btn:hover {
 
 body.dark-mode .empty-cart {
     color: #888;
+}
+
+body.dark-mode .cart-btn,
+body.dark-mode .profile-btn,
+body.dark-mode .dark-mode-btn {
+    color:#f4dcc4;
 }
 
 body.dark-mode .product-card,
@@ -339,6 +349,17 @@ body.dark-mode .btn-primary:hover {
     background: linear-gradient(135deg, #e8c9a8 0%, #d4b896 100%);
 }
 
+body.dark-mode .btn-bestseller {
+    background: transparent;
+    color: #f4dcc4;
+}
+
+body.dark-mode .btn-bestseller:hover {
+    background: transparent;
+    color: #e8c9a8;
+    box-shadow: none;
+}
+
 body.dark-mode .btn-secondary {
     background: transparent;
     border: 2px solid #f4dcc4;
@@ -556,11 +577,12 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
     gap: 30px;
+    position: relative;
 }
 
 .logo {
@@ -571,6 +593,8 @@ header {
     font-weight: bold;
     color: #2c1810;
     flex-shrink: 0;
+    position: absolute;
+    left: 0;
 }
 
 .logo img {
@@ -588,8 +612,7 @@ header {
     display: flex;
     list-style: none;
     gap: 30px;
-    margin-right: auto;
-    padding-left: 30px;
+    padding-left: 0;
 }
 
 .nav-links a {
@@ -613,6 +636,8 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
+    position: absolute;
+    right: 0;
 }
 
 /* Profile Dropdown Container */
@@ -652,16 +677,16 @@ header {
     align-items: center;
     background: white;
     border-radius: 25px;
-    padding: 8px 15px;
+    padding: 2px 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-box input {
     border: none;
     outline: none;
-    padding: 5px;
-    width: 250px;
-    font-size: 14px;
+    padding: 4px;
+    width: 180px;
+    font-size: 13px;
 }
 
 .search-btn,
@@ -1057,6 +1082,26 @@ header {
     background: #1a0f0a;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-bestseller {
+    background: transparent;
+    color: #d4b896;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+    font-size: 16px;
+}
+
+.btn-bestseller:hover {
+    background: transparent;
+    color: #c9964c;
+    transform: translateY(-2px);
+    box-shadow: none;
 }
 
 .btn-secondary {
